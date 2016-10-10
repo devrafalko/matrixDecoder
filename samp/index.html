@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>matrixDecoder</title>
+		<meta charset="UTF-8">
+		<link rel="icon" href="favicon.png"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<link rel="stylesheet" href="../css/indexStyles.css"/>
+		
+		<script src="../matrixDecoder.js"></script>
+		<script src="indexHandle.js"></script>
+	</head>
+	<body>
+		<div id="container" class="container">
+			<div class="row ranges">
+				<div class="col-sm-6 col-md-6 col-lg-6">
+					<div class="setRange">
+						<span>width</span>
+						<input type="range" min="10" max="500" step="1" value="250"/>
+						<span data-unit="px"></span>
+					</div>
+					<div class="setRange">
+						<span>height</span>
+						<input type="range" min="10" max="500" step="1" value="250"/>
+						<span data-unit="px"></span>
+					</div>
+					<div class="setRange">
+						<span>top</span>
+						<input type="range" min="-1000" max="1000" step="1" value="0"/>
+						<span data-unit="px"></span>
+					</div>
+					<div class="setRange">
+						<span>left</span>
+						<input type="range" min="-500" max="1200" step="1" value="0"/>
+						<span data-unit="px"></span>
+					</div>
+					<div class="setRange">
+						<span>border-width</span>
+						<input type="range" min="0" max="40" step="1" value="0"/>
+						<span data-unit="px"></span>
+					</div>
+					<div class="setRange">
+						<span>margin</span>
+						<input type="range" min="0" max="40" step="1" value="0"/>
+						<span data-unit="px"></span>
+					</div>
+					<div class="setRange">
+						<span>rotate</span>
+						<input type="range" min="-180" max="180" step="1" value="0"/>
+						<span data-unit="deg"></span>
+					</div>
+					<div class="setRange">
+						<span>rotateX</span>
+						<input type="range" min="-180" max="180" step="1" value="0"/>
+						<span data-unit="deg"></span>
+					</div>
+					<div class="setRange">
+						<span>rotateY</span>
+						<input type="range" min="-180" max="180" step="1" value="0"/>
+						<span data-unit="deg"></span>
+					</div>
+					<div class="setRange">
+						<span>rotateZ</span>
+						<input type="range" min="-180" max="180" step="1" value="0"/>
+						<span data-unit="deg"></span>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-6 col-lg-6">
+					<div class="setRange">
+						<span>translateX</span>
+						<input type="range" min="-500" max="500" step="1" value="0"/>
+						<span data-unit="px"></span>
+					</div>
+					<div class="setRange">
+						<span>translateY</span>
+						<input type="range" min="-500" max="500" step="1" value="0"/>
+						<span data-unit="px"></span>
+					</div>
+					<div class="setRange">
+						<span>translateZ</span>
+						<input type="range" min="-500" max="500" step="1" value="0"/>
+						<span data-unit="px"></span>
+					</div>
+					<div class="setRange">
+						<span>scaleX</span>
+						<input type="range" min="0" max="3" step="0.05" value="1"/>
+						<span data-unit=""></span>
+					</div>
+					<div class="setRange">
+						<span>scaleY</span>
+						<input type="range" min="0" max="3" step="0.05" value="1"/>
+						<span data-unit=""></span>
+					</div>
+					<div class="setRange">
+						<span>scaleZ</span>
+						<input type="range" min="0" max="3" step="0.05" value="1"/>
+						<span data-unit=""></span>
+					</div>
+					<div class="setRange">
+						<span>skewX</span>
+						<input type="range" min="-90" max="90" step="1" value="0"/>
+						<span data-unit="deg"></span>
+					</div>
+					<div class="setRange">
+						<span>skewY</span>
+						<input type="range" min="-90" max="90" step="1" value="0"/>
+						<span data-unit="deg"></span>
+					</div>
+					<div class="setRange">
+						<span>originX</span>
+						<input type="range" min="0" max="100" step="1" value="50"/>
+						<span data-unit="%"></span>
+					</div>
+					<div class="setRange">
+						<span>originY</span>
+						<input type="range" min="0" max="100" step="1" value="50"/>
+						<span data-unit="%"></span>
+					</div>
+					<div class="setRange">
+						<span>originZ</span>
+						<input type="range" min="0" max="500" step="1" value="0"/>
+						<span data-unit="px"></span>
+					</div>
+				</div>
+			</div>
+			<div class="row options">
+				<div class="col-sm-7 col-md-7 col-lg-7">
+					<div class="setRange">
+						<span>perspective</span>
+						<input type="checkbox" checked id="perspective"/>
+						<input type="range" min="50" max="2000" step="1" value="1000"/>
+						<span data-unit="px"></span>
+					</div>
+					<div class="setRange">
+						<span>perspectiveOriginX</span>
+						<input type="range" min="0" max="100" step="1" value="50"/>
+						<span data-unit="%"></span>
+					</div>
+					<div class="setRange">
+						<span>perspectiveOriginY</span>
+						<input type="range" min="0" max="100" step="1" value="50"/>
+						<span data-unit="%"></span>
+					</div>
+					<div class="setRange">
+						<span>perspective(transform)</span>
+						<input type="checkbox" checked id="transPersp"/>
+						<input type="range" min="50" max="2000" step="1" value="1000"/>
+						<span data-unit="px"></span>
+					</div>
+				</div>
+				<div class="col-sm-5 col-md-5 col-lg-5">
+					<div class="setRange">
+						<span>transformStyle</span>
+						<select id="styleSelect">
+							<option selected="selected" value="flat">flat</option>
+							<option value="preserve-3d">preserve-3d</option>
+						</select>
+					</div>
+					<div class="setRange">
+						<span>backfaceVisibility</span>
+						<select id="backfaceSelect">
+							<option selected="selected" value="visible">visible</option>
+							<option value="hidden">hidden</option>
+						</select>
+					</div>
+					<div class="setRange">
+						<span>Value type</span>
+						<select id="typeSelect">
+							<option selected="selected" value="parent">parent</option>
+							<option value="fixed">fixed</option>
+							<option value="element">element</option>
+						</select>
+					</div>						
+					<div class="setRange">
+						<input type="button" value="reset" id="resetValues"/>
+					</div>
+				</div>
+			</div>
+			<div id="output" class="row"></div>
+			<div id="parentBox" class="row">
+				<div id="animatedBox"></div>
+				<div class="coordBox" id="cornerA"><span></span></div>
+				<div class="coordBox" id="cornerB"><span></span></div>
+				<div class="coordBox" id="cornerC"><span></span></div>
+				<div class="coordBox" id="cornerD"><span></span></div>
+			</div>
+		</div>
+	</body>
+</html>

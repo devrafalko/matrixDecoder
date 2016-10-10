@@ -1,0 +1,141 @@
+@import "https://fonts.googleapis.com/css?family=Raleway";
+* {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  background-color: #ffffff;
+}
+
+body {
+  padding: 15px;
+}
+
+#container {
+  position: relative;
+  min-width: 400px;
+  box-shadow: 3px 3px 10px rgba(55, 55, 55, 0.5);
+}
+#container > div {
+  margin: 10px 0px;
+  box-shadow: 3px 3px 10px rgba(55, 55, 55, 0.5);
+}
+
+.setRange {
+  width: 100%;
+  margin: 5px 0px;
+  text-align: center;
+}
+.setRange > * {
+  float: left;
+}
+.setRange::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.ranges {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+input[type=range] {
+  margin: 0px 5px;
+  padding: 0px;
+}
+.ranges input[type=range] {
+  width: calc(100% - 170px);
+}
+.options input[type=range] {
+  width: calc(100% - 240px);
+}
+input[type=checkbox] + input[type=range] {
+  width: calc(100% - 260px);
+}
+
+input[type=checkbox] {
+  margin: 2px 2px;
+  width: 16px;
+  height: 16px;
+}
+
+select {
+  display: inline-block;
+  margin: 0px 5px;
+  padding: 0px;
+  width: calc(100% - 180px);
+  vertical-align: middle;
+}
+
+.setRange > span:first-child {
+  text-align: right;
+  width: 100px;
+}
+.options .setRange > span:first-child {
+  width: 170px;
+}
+.setRange > span:last-child {
+  text-align: center;
+  width: 60px;
+  box-shadow: 1px 1px 3px rgba(55, 55, 55, 0.5);
+}
+
+#resetValues {
+  padding: 0px;
+  margin: 0px 5px;
+  float: right;
+  width: calc(100% - 180px);
+  border: solid 1px #33aaff;
+  box-shadow: 2px 2px 5px rgba(55, 55, 55, 0.5);
+  outline-width: 0px;
+}
+
+#animatedBox {
+  box-sizing: content-box;
+  overflow: hidden;
+  border: solid 10px #e1e1e1;
+  position: absolute;
+  z-index: 0;
+  box-shadow: 3px 3px 10px rgba(55, 55, 55, 0.5);
+  padding: 10px;
+}
+
+#output {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#parentBox {
+  position: relative;
+  height: 50vh;
+}
+
+.coordBox {
+  position: absolute;
+}
+
+.coordBox > span {
+  position: absolute;
+  display: inline-block;
+  background-color: #ffffff;
+  border: solid 1px #33aaff;
+  width: 80px;
+  height: 75px;
+  padding: 3px;
+}
+#cornerA > span {
+  bottom: 0px;
+  right: 0px;
+}
+#cornerB > span {
+  bottom: 0px;
+  left: 0px;
+}
+#cornerC > span {
+  top: 0px;
+  left: 0px;
+}
+#cornerD > span {
+  top: 0px;
+  right: 0px;
+}
